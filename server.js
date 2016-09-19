@@ -15,11 +15,11 @@ var articleOne = {
             This is the content of my first article.This is the content of my first article.This is the content of my first article.
         </p>`   
 };
-function createTemplate(data){
+function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
-    var content = data.content
+    var content = data.content;
     var htmlTemplate = `
     <html>
     <head>
@@ -42,12 +42,12 @@ function createTemplate(data){
             ${date}
         </div>
         <div>
-        $(content)
+        ${content}
         </div>
     </div>
     </body>
 </html>`;
-return htmlTemplate
+return htmlTemplate;
 }
 
 var app = express();
