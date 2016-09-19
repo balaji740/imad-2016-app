@@ -4,7 +4,7 @@ var path = require('path');
 var articleOne = {
     title: 'Article One Balaji Seshadri',
     heading: 'Article one',
-    date: 'Sep 05,2016'
+    date: 'Sep 05,2016',
     content: `<p>This is the content of my first article.This is the content of my first article.This is the content of my first article.
             This is the content of my first article.This is the content of my first article.This is the content of my first article.
         </p>   
