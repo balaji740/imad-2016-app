@@ -4,7 +4,15 @@ var element = document.getElementById('main-text');
 element.innerHTML = 'new-value';
 
 var img = document.getElementById('madi');
-img.onClick = function()
+//img.onClick = function()
+var marginLeft = 0;
+function moveRight()
 {
- img.style.marginLeft = '100px';
+    marginLeft = marginLeft + 10;
+    img.style.marginLeft = marginLeft + 'px';
+}
+   img.onClick = function(){
+ 
+ var interval = setInterval(moveRight, 100);
+ //img.style.marginLeft = '100px';
 };
