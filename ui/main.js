@@ -12,7 +12,7 @@ button.onclick = function (){
     };
     request.open('GET','http://balaji740.imad.hasura-app.io/counter', true);
     request.send(null);
-}
+};
     
 //console.log('Loaded!');
 //change the text of main text-div
