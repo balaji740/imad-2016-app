@@ -37,9 +37,9 @@ button.onclick = function (){
 //img.style.marginLeft = '100px';
 //};
 
-var nameInput = document.getElementById('name')
-var name = nameInput.value
-var submit = document.getElementById('btn_id')
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('btn_id');
 submit.onclick = function(){
     var names = [name-1,name-2,name-3,name-4];
     var list ='';
