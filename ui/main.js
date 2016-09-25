@@ -37,15 +37,34 @@ button.onclick = function (){
 //img.style.marginLeft = '100px';
 //};
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submit = document.getElementById('btn_id');
-submit.onclick = function(){
-    var names = ['name1','name2','name3','name4'];
-    var list ='';
-    for(var i=0;i<names.length;i++){
-        list += '<li>' + names[i] + '</li>';
-    }
-    var ui = getElementById('namelist');
-    ui.innerHTML = list;
-}
+//submit.onclick = function(){
+//    var names = ['name1','name2','name3','name4'];
+//    var list ='';
+//    for(var i=0;i<names.length;i++){
+//        list += '<li>' + names[i] + '</li>';
+//    }
+//    var ui = getElementById('namelist');
+//    ui.innerHTML = list;
+submit.onclick = function (){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState == XMLHttpRequest.DONE) {
+            if (request.status == 200) {
+                var names = request.responseText;
+                names = JSON.parse(names);
+                var list ='';
+                for(var i=0;i<names.length;i++){
+                     list += '<li>' + names[i] + '</li>';
+                    }
+                var ui = getElementById('namelist');
+                ui.innerHTML = list;
+            }
+        }
+    };
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+    request.open('GET','http://balaji740.imad.hasura-app.io/submit-one?name=', true);
+    request.send(null);
+};
