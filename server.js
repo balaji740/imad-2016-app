@@ -90,11 +90,6 @@ return htmlTemplate;
 var app = express();
 app.use(morgan('combined'));
 
-var counter = 0;
-app.get('/counter',function(req, res) {
-    counter = counter+1;
-    res.send(counter.toString());
-});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -110,6 +105,13 @@ app.get('/test-db', function (req, res) {
    }); 
   
 });
+
+var counter = 0;
+app.get('/counter',function(req, res) {
+    counter = counter+1;
+    res.send(counter.toString());
+});
+
 var names = [];
 app.get('/submit-name',function(req,res){
   var name = req.query.name;
