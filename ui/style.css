@@ -48,11 +48,12 @@ body {
 }
 
 container {
-              width: 600px;
-              margin: 0;
+              max-width: 800px;
+              margin: 0 auto;
               color: #1b1717;
               font-family: sans-serif;
-              padding: 20px;
+              padding-left: 20px;
+              padding-right: 20px;
               border: 25px solid black;
             }
 
