@@ -47,8 +47,8 @@ body {
     height: 200px;
 }
 
-container {
-              max-width: 800px;
+.container {
+              max-width: 400px;
               margin: 0 auto;
               color: #1b1717;
               font-family: sans-serif;
