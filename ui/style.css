@@ -3,7 +3,7 @@ body {
     background-color: #ccebff;
     margin-top: 60px;
 }
-.header ul {
+#header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
