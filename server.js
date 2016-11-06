@@ -9,49 +9,49 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
-var articles = {
-    'article-one': {
-    title: 'Article One Balaji Seshadri',
-    heading: 'Article one',
-    date: 'Sep 05,2016',
-    content: `<p>This is the content of my first article.This is the content of my first article.This is the content of my first article.
-            This is the content of my first article.This is the content of my first article.This is the content of my first article.
-        </p>   
-        <p>This is the content of my first article.This is the content of my first article.This is the content of my first article.
-            This is the content of my first article.This is the content of my first article.This is the content of my first article.
-        </p>    
-        <p>This is the content of my first article.This is the content of my first article.This is the content of my first article.
-            This is the content of my first article.This is the content of my first article.This is the content of my first article.
-        </p>`   
-    },
-     'article-two': {
-    title: 'Article Two Balaji Seshadri',
-    heading: 'Article Two',
-    date: 'Sep 05,2016',
-    content: `<p>This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article
-        </p>   
-        <p>This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.
-        </p>
-        <p>This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.This is the content of my second article.
-        </p> `
-    },
-     'article-three': {
-    title: 'Article Three Balaji Seshadri',
-    heading: 'Article Three',
-    date: 'Sep 10,2016',
-    content: `<p>This is the content of my third article.This is the content of my third article.This is the content of my third article.
-            This is the content of my third article.This is the content of my third article.This is the content of my third article.
-        </p> 
-        <p>
-       This is the content of my third article.This is the content of my third article.This is the content of my third article.
-            This is the content of my third article.This is the content of my third article.This is the content of my third article.
-        </p> 
-        <p>
-        This is the content of my third article.This is the content of my third article.This is the content of my third article.
-            This is the content of my third article.This is the content of my third article.This is the content of my third article.
-        </p>  ` 
-    },
-};
+//var articles = {
+//    'article-one': {
+//    title: 'Article One Balaji Seshadri',
+//    heading: 'Article one',
+//    date: 'Sep 05,2016',
+//    content: `<p>This is the content of my first article.This is the content of my first article.This is the content of my first article//.
+//            This is the content of my first article.This is the content of my first article.This is the content of my first article.
+//        </p>   
+//        <p>This is the content of my first article.This is the content of my first article.This is the content of my first article.
+//            This is the content of my first article.This is the content of my first article.This is the content of my first article.
+//        </p>    
+//        <p>This is the content of my first article.This is the content of my first article.This is the content of my first article.
+//            This is the content of my first article.This is the content of my first article.This is the content of my first article.
+//        </p>`   
+//    },
+//     'article-two': {
+//    title: 'Article Two Balaji Seshadri',
+//    heading: 'Article Two',
+//    date: 'Sep 05,2016',
+//    content: `<p>This is the content of my second article.This is the content of my second article.This is the content of my second //article.This is the content of my second article.This is the content of my second article.This is the content of my second article
+//        </p>   
+//        <p>This is the content of my second article.This is the content of my second article.This is the content of my second article//.This is the content of my second article.This is the content of my second article.This is the content of my second article.
+    //    </p>
+    //    <p>This is the content of my second article.This is the content of my second article.This is the content of my second article//.This is the content of my second article.This is the content of my second article.This is the content of my second article.
+ //       </p> `
+//    },
+//     'article-three': {
+//    title: 'Article Three Balaji Seshadri',
+//    heading: 'Article Three',
+//    date: 'Sep 10,2016',
+//    content: `<p>This is the content of my third article.This is the content of my third article.This is the content of my third article//.
+//            This is the content of my third article.This is the content of my third article.This is the content of my third article.
+//        </p> 
+//        <p>
+//       This is the content of my third article.This is the content of my third article.This is the content of my third article.
+//            This is the content of my third article.This is the content of my third article.This is the content of my third article.
+//        </p> 
+//        <p>
+//        This is the content of my third article.This is the content of my third article.This is the content of my third article.
+//            This is the content of my third article.This is the content of my third article.This is the content of my third article.
+//        </p>  ` 
+//    },
+//};
 function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
@@ -122,8 +122,8 @@ app.get('/submit-name',function(req,res){
   //app.get('/:articleName', function (req, res) {
   app.get('/articles/:articleName', function (req, res) {
   
-  pool.query("SELECT * FROM article WHERE TITLE ='" +req.params.articleName +"'", function(err,result){
-  //pool.query("SELECT * FROM article WHERE TITLE =$1",[req.params.articleName], function(err,result){
+  pool.query("SELECT * FROM article WHERE TITLE = '" +req.params.articleName +"'", function(err,result){
+  //pool.query("SELECT * FROM article WHERE TITLE = $1",[req.params.articleName], function(err,result){
      if(err) {
            res.status(500).send(err.toString());
        }
