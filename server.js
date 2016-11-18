@@ -152,6 +152,7 @@ app.post('/login', function(req,res) {
              } else {
                console.log('user inv2');
                res.sendStatus(403).send('username/password is invalid');
+               console.log('user inv3');
              }
               
            }
