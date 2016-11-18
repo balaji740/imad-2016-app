@@ -133,11 +133,13 @@ app.post('/create-user', function(req,res) {
 app.post('/login', function(req,res) {
     var username = req.body.username;
     var password = req.body.password;
+    console.log('bef query');
     pool.query('SELECT * FROM "user" WHERE username = $1' , [username], function(err, result) {
         if(err) {
            res.status(500).send(err.toString());
        } else {
            if (result.rows.length === 0) {
+               console.log('user inv1');
                res.send(403).send('username/password is invalid');
            } else {
               var dbString = result.rows[0].password;
@@ -145,9 +147,10 @@ app.post('/login', function(req,res) {
               var hashedPassword = hash(password,salt);
               if (hashedPassword === dbString) {
                   req.session.auth = {userId: result.rows[0].id};
+                   console.log('cred correct');
               res.send('credentials are correct');
              } else {
-              
+               console.log('user inv2');
                res.sendStatus(403).send('username/password is invalid');
              }
               
