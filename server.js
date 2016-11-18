@@ -131,8 +131,10 @@ app.post('/create-user', function(req,res) {
 });
 
 app.post('/login', function(req,res) {
+    console.log('user inv00');
     var username = req.body.username;
     var password = req.body.password;
+    console.log('user inv01');
     console.log('bef query');
     pool.query('SELECT * FROM "user" WHERE username = $1' , [username], function(err, result) {
         if(err) {
