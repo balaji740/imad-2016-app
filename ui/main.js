@@ -85,7 +85,7 @@ var submit = document.getElementById('btn_id');
       var password = document.getElementById('password').value;
       console.log(username);
       console.log(password);
-      console.log(password);
+      console.log('test1');
 //    request.open('GET','http://balaji740.imad.hasura-app.io/submit-name?name=' + name, true);
       request.open('POST','http://balaji740.imad.hasura-app.io/login',true);
       console.log('test1');
