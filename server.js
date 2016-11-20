@@ -101,9 +101,9 @@ app.use(session({
 
 
 app.get('/', function (req, res) {
-  console.log('index1');
+  //console.log('index1');
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-  console.log('index2');
+  //console.log('index2');
 });
 
 function hash(input,salt){
