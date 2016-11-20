@@ -121,7 +121,7 @@ app.post('/create-user', function(req,res) {
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbString = hash(password, salt);
-    pool.query('INSERT INTO "user" (username, password) VALUES ($1,$2)' , [username,dbString], function(err, result) {
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)' , [username,dbString], function(err, result) {
         
   if(err) {
            res.status(500).send(err.toString());
@@ -136,14 +136,14 @@ app.post('/login', function(req,res) {
     console.log('user inv00');
     var username = req.body.username;
     var password = req.body.password;
-    console.log('user inv01');
-    console.log('bef query');
+//    console.log('user inv01');
+//    console.log('bef query');
     pool.query('SELECT * FROM "user" WHERE username = $1' , [username], function(err, result) {
         if(err) {
            res.status(500).send(err.toString());
        } else {
            if (result.rows.length === 0) {
-               console.log('user inv1');
+ //              console.log('user inv1');
                res.send(403).send('username/password is invalid');
            } else {
               var dbString = result.rows[0].password;
@@ -151,12 +151,12 @@ app.post('/login', function(req,res) {
               var hashedPassword = hash(password,salt);
               if (hashedPassword === dbString) {
                   req.session.auth = {userId: result.rows[0].id};
-                   console.log('cred correct');
+  //                 console.log('cred correct');
               res.send('credentials are correct');
              } else {
-               console.log('user inv2');
+  //             console.log('user inv2');
                res.sendStatus(403).send('username/password is invalid');
-               console.log('user inv3');
+//               console.log('user inv3');
              }
               
            }
