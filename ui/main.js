@@ -101,7 +101,7 @@ function loadLogin () {
     };
     
     request.open('GET', '/check-login', true);
-    request.send(null);
+//    request.send(null);
 }
 
 function loadArticles () {
