@@ -93,5 +93,5 @@ var submit = document.getElementById('btn_id');
       console.log('test3');
       request.send(JSON.stringify({username:username , password:password}));
       console.log('test4');
-      request.send(null);
+//      request.send(null);
 };
