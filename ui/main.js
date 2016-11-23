@@ -1,4 +1,5 @@
 function loadLoginForm () {
+    console.log(test1);
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
         <input type="text" id="username" placeholder="username" />
@@ -8,7 +9,7 @@ function loadLoginForm () {
         <input type="submit" id="register_btn" value="Register" />
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
-    
+    console.log(loginHtml);
     // Submit username/password to login
     var submit = document.getElementById('login_btn');
     submit.onclick = function () {
