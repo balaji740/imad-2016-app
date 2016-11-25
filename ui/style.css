@@ -3,7 +3,7 @@ body {
     background-color: #ccebff;
     margin-top: 20px;
 }
-  ul {
+  .header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -12,11 +12,11 @@ body {
     color: red;
 }
 
- li {
+ .header li {
     float: left;
 }
 
- li a {
+ .header li a {
     display: block;
     color: white;
     text-align: center;
@@ -25,7 +25,7 @@ body {
     text-decoration: none;
 }
 
- li a:hover {
+ .header li a:hover {
     background-color: #111111;
 }
 
