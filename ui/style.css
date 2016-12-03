@@ -4,7 +4,9 @@ body {
     margin-top: 10px;
 }
   
-		
+html, body {
+    overflow: visible;
+}		
 
 .center {
       text-align: center;
