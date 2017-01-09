@@ -241,6 +241,11 @@ th {
   .navbar {
     display: none;
   }
+  .navbar-nav > li{
+   padding-left:30px;
+   padding-right:30px;
+  }
+ 
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
